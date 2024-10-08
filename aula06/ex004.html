@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escrevendo com JS</title>
+</head>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: rgb(153, 0, 255);
+            font-size: 2em;
+            padding: 20px;
+            color: white;
+            text-shadow: 1px 1px 1px black;
+        }
+    </style>
+<body>
+    <script>
+        nome = window.prompt('Digite seu nome:')
+        document.write(`<p>Olá ${nome}, seu nome tem ${nome.length} letras </p><br>`)
+        document.write(`<p>Seu nome em maiúsculo: ${nome.toUpperCase()}</p><br>`)
+        document.write(`<p>Seu nome em minúsculo: ${nome.toLowerCase()}</p>`)
+    </script>
+</body>
+</html>
