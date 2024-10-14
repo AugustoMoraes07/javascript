@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRASILEIROOUESTRANGEIRO</title>
+</head>
+<body>
+    <h1>BRASILEIRO OU ESTRANGEIRO ?</h1>
+    <p>Em que país você nasceu ? 
+        <input type="text" name="país" id="p" placeholder="Digite aqui" > <!--CAIXA DE TEXTO COM O PAÍS QUE NASCEU-->
+        <input type="button" value="VERIFICAR" onclick="verificar()"> <!--BOTÃO PARA VERIFICAR SE É BRASILEIRO OU ESTRANGEIRO-->
+        <div id="res"></div> <!--AQUI FICA O RESULTADO-->
+    </p>
+    <script>
+        function verificar(){
+            var país = document.getElementById('p')
+            var res = document.getElementById('res')
+            //ESTRUTURA CONDICIONAL
+            if( país.value=='Brasil' ) { //TRUE
+                res.innerHTML = '<p>Você é <strong>Brasileiro</strong></p>'
+            } else{ //FALSE
+                res.innerHTML = '<p>Você é <strong>Estrangeiro</strong></p>'
+            }
+            
+        }
+    </script>
+</body>
+</html>

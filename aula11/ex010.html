@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de MULTAS</h1>
+    <p>Digite a velocidade do seu carro 
+        <input type="number" name="cxvel" id="cxvel">
+       km/h 
+        <input type="button" value="VERIFICAR" onclick="cvel()">
+    </p>
+    <div id="res"></div>
+    
+    <script>
+        function cvel(){
+            var vel = document.querySelector('input#cxvel')
+            var vel = Number(vel.value)
+            var res = document.querySelector('div#res')
+            var multa = 500
+            res.innerHTML = `<p>Sua velocidade é de ${vel} km/h</p>`
+            if(vel > 60){
+                res.innerHTML += `<p>Você foi <strong>multado</strong> em ${multa.toLocaleString('pt-br', {style:'currency',currency:'BRL'})} (ULTRAPASSOU A VELOCIDADE MÁXIMA)</p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cuidado!</p>`
+        }
+    </script>
+</body>
+</html>
