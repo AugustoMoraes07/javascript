@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Qual o Horário?</title>
-    <link rel="stylesheet" href="estilos/style.css"> <!--CSS EXTERNO-->
+    <link rel="stylesheet" href="estilos/style.css" media="screen"> <!--CSS EXTERNO-->
+    <link rel="stylesheet" href="estilos/mediaquery.css" media="screen and (max-width:470px)">
 </head>
-<body>
+<body onload="carregar()">
     <header><h1>Hora do dia</h1></header>
     <section>
         <div id="txth"></div> <!--TXT FALANDO QUAL É O HORÁRIO-->
