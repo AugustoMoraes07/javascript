@@ -1,6 +1,7 @@
+var data = new Date()
+var ano = data.getFullYear()
+
 function verificador(){ //FUNÇÃO PARA VERIFICAR A IDADE
-    var data = new Date()
-    var ano = data.getFullYear()
     var nasc = document.getElementById('nasc')
     var sx = document.getElementsByName('sx')
     var txti = document.querySelector('div#txtimagem') 
@@ -21,31 +22,31 @@ function verificador(){ //FUNÇÃO PARA VERIFICAR A IDADE
             gênero = 'Homem'
             if (idade >= 0 && idade < 13){
                 //BEBE M
-                img.setAttribute('src', './bebe-m.jpg')
+                img.setAttribute('src','./imagens/bebe-m.jpeg')
             }else if(idade < 22){
                 //JOVEM M
-                img.setAttribute('src', './jovem-m.jpg')
+                img.setAttribute('src','./imagens/jovem-m.jpeg')
             } else if(idade < 60){
                 //ADULTO M
-                img.setAttribute('src', './adulto-m.jpg')
+                img.setAttribute('src','./imagens/adulto-m.jpeg')
             } else{
                 //IDOSO M
-                img.setAttribute('src', './idoso-m.jpg')
+                img.setAttribute('src','./imagens/idoso-m.jpeg')
             }
         }else if(sx[1].checked){
             gênero = 'Mulher'
             if (idade >= 0 && idade < 13){
                 //BEBE F
-                img.setAttribute('src', './bebe-f.jpg')
+                img.setAttribute('src','./imagens/bebe-f.jpeg')
             }else if(idade < 22){
                 //JOVEM F
-                img.setAttribute('src', './jovem-f.jpg')
+                img.setAttribute('src','./imagens/jovem-f.jpeg')
             } else if(idade < 60){
                 //ADULTO F
-                img.setAttribute('src', './adulto-f.jpg')
+                img.setAttribute('src','./imagens/adulto-f.jpeg')
             } else{
                 //IDOSO F
-                img.setAttribute('src', './idoso-f.jpg')
+                img.setAttribute('src','./imagens/idoso-f.jpeg')
             }
             }
     
