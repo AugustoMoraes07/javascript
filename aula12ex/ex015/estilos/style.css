@@ -8,7 +8,7 @@
 }
 
 body{
-    height: 80vw;
+    height: 100vh;
     width: 100vw;
     display: flex;
     flex-flow: column nowrap;
@@ -55,12 +55,6 @@ div#txtimagem{
     padding-bottom: 20px;
 }
 
-div#imagem{
-    display: none;
-    height: 250px;
-    width: 250px;
-}
-
 footer>p{
     margin-top: 10px;
     text-align: center
@@ -73,4 +67,12 @@ a{
 }
 a:hover{
     text-decoration: underline;
+}
+
+img#foto{
+    height : 250px;
+    width : 250px;
+
+    border-radius: 50%;
+    text-align: center;
 }
