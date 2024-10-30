@@ -40,7 +40,7 @@ section{
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.541);
 }
 
-select#addnum{
+select#selnum{
     height: 200px;
     width: 200px;
     padding: 10px;

@@ -31,7 +31,7 @@ function adicionar(){
     }
 }} */
 
-
+/*
 //Vídeo Guanabara
 //ELEMENTOS EM VARIÁRVEIS
 let num = document.getElementById('num')
@@ -81,4 +81,80 @@ function analisar(){
     var numenor = Math.min(...valores)
     res.innerHTML += `O menor valor foi ${numenor}`
     }
+}
+*/
+
+//Fazendo ex20 no help
+
+//ATRIBIUR DADOS
+var num = document.getElementById('num')
+var lista = document.getElementById('selnum')
+var res = document.getElementById('res')
+var valores = []
+
+//IDENTIFICAR SE O NÚMERO É VALIDO
+function isNumero(n){
+    if(n>= 1 && n <= 100){
+        return true
+    }else{
+        return false
+    }
+}
+
+//IDENTIFICAR SE O NÚMERO JÁ ESTÁ NA LISTA
+function inLista(n, l){
+    if(l.indexOf(Number(n)) != -1){
+        return true
+    }else{
+        return false
+    }
+}
+
+
+//ADICIONAR NÚMERO
+function adicionar(){ 
+    //CONDIÇÃO + CONUJUNÇÃO DE DUAS FUNÇÕES
+    if(isNumero(num.value) && !inLista(num.value, valores)){
+        valores.push(Number(num.value))
+        let opt = document.createElement('option')
+        opt.text = `O número ${num.value} foi adicionado`
+        lista.appendChild(opt)
+        res.innerHTML = ''
+    } else{ 
+            window.alert('[ERRO] Não foi possivel identificar um número ou já está na lista')
+    }
+    num.value = ''
+    num.focus()
+}
+
+function finalizar(){
+    res.innerHTML = ''
+     
+
+    if(valores.length == 0){
+        window.alert('[ERRO] Adicione um valor, antes de finalizar')
+    }else{
+    let tot = valores.length
+    let maior = valores[0]
+    let menor = valores[0]
+    let soma = 0
+    let media = 0
+
+    for(let pos in valores){
+       soma += valores[pos]
+       if(valores[pos] > maior)
+        maior = valores[pos]
+       if(valores[pos] < menor)
+        menor = valores[pos]
+    }
+    media = soma / tot
+    res.innerHTML += `<p>Foram adicionados ${tot} números</p>`
+    res.innerHTML += `<p>O maior número é ${maior}</p>`
+    res.innerHTML += `<p>O menor número é ${menor}</p>`
+    res.innerHTML += `<p>Somando todos os números, temos ${soma}</p>`
+    res.innerHTML += `<p>A média dos números é ${media.toFixed(3)} </p>`
+
+
+}
+
 }
