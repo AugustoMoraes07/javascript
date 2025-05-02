@@ -1,13 +1,16 @@
-// Mutável ou imutável em const
 
-const valor = [10]
-valor.push(9)
-valor.unshift(8)
-valor.unshift(7)
-valor.unshift(6)
-valor.unshift(5)
-valor.unshift(4)
-valor.unshift(3)
-valor.unshift(2)
-valor.unshift(1)
-console.log(valor)
+
+// Colocando os dados em um object
+function enviarDados(nome,sobrenome,altura,peso) {
+    return {nome,sobrenome,altura,peso};
+};
+const dados = enviarDados('Augusto','Moraes',165,53);
+
+// Adicionar um Array para cada pessoa com seus dados
+function criaPessoa(dados,numero){
+
+}
+
+const lista = criaPessoa(dados,numero);
+
+console.log(lista.length)
