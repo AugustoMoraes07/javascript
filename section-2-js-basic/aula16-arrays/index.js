@@ -26,7 +26,7 @@ console.log(alunos instanceof Array)
 //
 // ADD
 //alunos[alunos.length] = 'Eduardo'; adicionando
-//alunos.push('Eduardo') adicionar de forma mais prática
+//alunos.push('Eduardo') adicionar de forma mais prática, normamente é o mais utilizado
 //alunos.unshift('Felipe') adicionar no começo
 //
 

@@ -4,10 +4,10 @@ const pessoa = {
     sobrenome:'Felipe',
     idade:17,
     fala(){
-        console.log(`${this.nome} ${this.sobrenome} está falando que sua idade é ${this.idade}`)
+        console.log(`${this.nome} ${this.sobrenome} está falando que sua idade é ${this.idade}`);
     },
     incrementaIdade(){
-        this.idade++
+        this.idade++;
     }
 }
 
@@ -23,7 +23,7 @@ pessoa.fala()
 // Fazendo função que retorna dados em objetos
 /*function criaPessoa (nome, sobrenome, idade)// Recebendo no parâmetro
 {
-    return {nome, sobrenome, idade};
+    return {nome, sobrenome, idade}; Retornando dados em objetos/Como o parametro tem o mesmo nome das info, coloquei só uma vez
 }
 
 
