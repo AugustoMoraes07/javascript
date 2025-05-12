@@ -98,10 +98,23 @@ button:hover{
 }
 
 
-div#mensagem{
+div#res{
     grid-area: mensagem;
-    background-color: rgb(109, 228, 109);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.valido, .invalido{
     padding: 10px;
-    border-radius: 10px;
-    
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+.valido{
+    background-color: green;
+}
+.invalido{
+    background-color: red;
 }
