@@ -12,7 +12,7 @@ task.addEventListener('keypress', function (e) {
         if (!task.value) return;
         criaTarefa(task.value);
     }
-});
+}); 
 
 function limpaInput() {
     task.value = '';
@@ -70,6 +70,7 @@ function salvarTarefas() {
     localStorage.setItem('tarefas', tarefasJSON);
 }
 
+// PEGANDO DE VOLTA AS TAREFAS QUE FORAM ARMAZENADAS NO LOCALSTORAGE
 function addTarefasSalvas() {
     const tarefas = localStorage.getItem('tarefas');
     const listaDeTarefas = JSON.parse(tarefas);
