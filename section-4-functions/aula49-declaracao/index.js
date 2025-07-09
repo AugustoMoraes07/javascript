@@ -11,7 +11,7 @@ function falaOi(){
 const souumDado = function(){
     console.log('Sou um dado.');
 };
-souumDado()
+souumDado();
 
 // function executaFuncao(funcao){
 //     console.log('Vou executar sua função abaixo:')
@@ -29,6 +29,6 @@ funcaoArrow();
 // Dentro de um objeto
 const obj = {
     falar(){
-        console.log('Estou falando...')
+        console.log('Estou falando...');
     }};
 obj.falar();
