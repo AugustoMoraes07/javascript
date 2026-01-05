@@ -1,3 +1,1 @@
-nome = 'Augusto'
-console.log(`Meu nome é ${nome}. `);
-console.log('Estou aprendendo JavaScript às', 3,':',14,'pm.');
+console.log('Meu nome é "Augusto". Estou aprendendo JavaScript às ', 15,' da manhã.');
