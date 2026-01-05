@@ -1,18 +1,20 @@
 /*
-Augusto Felipe Moraes Fernandes tem 17 anos, pesa 53 kg
-
-tem 1.65 de altura e seu IMC é 19.467401285583104
-
-
+Augusto Felipe Moraes Fernandes tem 18 anos, pesa 55kg
+tem 1.65 de altura e seu IMC é de 33,33
+Augusto Felipe Moraes Fernandes nasceu em 2007
 */
+
 const nome = 'Augusto Felipe';
 const sobrenome = 'Moraes Fernandes';
-const idade = 18;
-const peso = 53;
-const alturaM = 1.65;
-let imc = peso/(alturaM**2);
-let anoNascimento = 2025-idade;
+const idade = '18';
+const peso = '55';
+const alturaEmM = '1.65';
+let imc; // peso/altura
+let anoNascimento;
 
-console.log(`${nome} ${sobrenome}, vai completar ${idade} anos. Pesa ${peso}kg e tem ${alturaM}(M) de altura`);
-console.log(`Seu imc é ${imc}`);
-console.log(`Seu ano de nascimento é ${anoNascimento}`);
+imc = peso / (alturaEmM*alturaEmM);
+anoNascimento = 2025-idade;
+
+console.log(`${nome} ${sobrenome} tem ${18} anos, pesa ${peso}kg`);
+console.log(`Tem ${alturaEmM} de altura e seu imc é ${imc}`);
+console.log(`${nome} ${sobrenome} nasceu em ${anoNascimento}`);
