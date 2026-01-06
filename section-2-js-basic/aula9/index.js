@@ -14,3 +14,4 @@ console.log(b, a);
 
 b.push(3);
 console.log(a, b);
+
