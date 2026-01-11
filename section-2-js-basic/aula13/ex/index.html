@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercícios aula 13</title>
+    <title>Exercícios sobre strings</title>
 </head>
 <body>
     
-    <script src="ex13.js"></script>
+    <script>
+        let nome = prompt('Digite seu nome:');
+        document.body.style.fontSize = '3em';
+        document.body.innerHTML = `<p>Olá, ${nome} seja muito bem-vindo!</p>`;
+        
+        nome = nome.toLowerCase();
+        document.body.innerHTML += `<p>Seu nome tem ${nome.length} letras</p>`;
+        document.body.innerHTML += `<p>A segunda letra do seu nome é: ${nome[1]}</p>`;
+        document.body.innerHTML += `<p>Qual o primeiro índice da letra U no seu nome? ${nome.indexOf('u')}</p>`;
+        document.body.innerHTML += `<p>Qual o último índice da letra U no seu nome? ${nome.lastIndexOf('u')}</p>`;
+        document.body.innerHTML += `<p>As últimas 3 letras do seu nome são: ${nome.slice(-3)}</p>`;
+        document.body.innerHTML += `<p>As palavras do seu nome são: ${nome.split(' ')}<p>`;
+        document.body.innerHTML += `<p>Seu nome com letras maiúsculas: ${nome.toUpperCase()}<p>`;
+        document.body.innerHTML += `<p>Seu nome com letras minúsculas: ${nome.toLowerCase()}<p>`;
+    </script>
 </body>
 </html>
