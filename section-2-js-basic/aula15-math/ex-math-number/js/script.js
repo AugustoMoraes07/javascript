@@ -4,7 +4,7 @@ const divText = document.getElementById('texto');
 
 numTitle.innerText = num;
 
-divText.innerHTML = `<p>Raiz quadrada: ${num**1/2}</p>`;
+divText.innerHTML = `<p>Raiz quadrada: ${num**0.5}</p>`;
 divText.innerHTML += `<p>${num} é inteiro: ${Number.isInteger(num)}</p>`;
 divText.innerHTML += `<p>É NaN: ${Number.isNaN(num)}</p>`;
 divText.innerHTML += `<p>Arredondando para baixo: ${Math.floor(num)}</p>`;
