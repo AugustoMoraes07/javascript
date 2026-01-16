@@ -26,7 +26,6 @@ function meuEscopo(){
 
         return {nome, sobrenome, peso, altura};
     }
-    
 }
 
 meuEscopo();
