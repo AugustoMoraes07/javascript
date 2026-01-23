@@ -1,69 +1,80 @@
-:root {
-    --back-color: rgb(144, 238, 144);
-    --action-green: rgb(88, 163, 88);
+:root{
+    --primary-color:#9b1f1f;
 }
 
 *{
-    margin: 0px;
-    padding: 0px;
+    /* Configurações globais, qualquer alteração aqui pode afetar bibliotecas */
     box-sizing: border-box;
     outline: 0;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
+    /* Configurações para o corpo*/
     height: 100vh;
     width: 100vw;
-    background-color: var(--back-color);
+    padding: 0px; 
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--primary-color);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
     max-width: 600px;
-    margin:20px auto;
     padding: 20px;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px black;
+    box-shadow: 1px 1px 5px black;
+    text-align: justify;
 }
 
+form{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
 
-
-form input, form label, form button{
-    display: block;
+{
     width: 100%;
 }
 
-form div{
-    margin: 20px 0px
+form p, label, input, button{
+    width: 100%;
 }
 
-fomr label{
-    font-weight: bolder;
-}
-
-form input{
-    height: 30px;
+input{
+    display: block;
+    padding: 10px;
     font-size: 1.2rem;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid;
-
-    transition: all 0.1s ease;
-}
-form input:focus, form input:hover{
-    border-color: var(--action-green);
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    animation-timing-function: 0s ease;
 }
 
+input:focus{
+    border: 0;
+    outline: 1px solid var(--primary-color);
+}
 
 button{
-    cursor: pointer;
-    height: 40px;
-    font-weight: bold;
-    border-radius: 5px;
-    border: none;
-    transition: all 0.1s ease;
-}
-button:hover{
-    background-color: var(--action-green);
+    height: 50px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 0px 0px 10px black;
+    background-color: var(--primary-color);
     color: white;
+    cursor: pointer;
+    animation-timing-function: ease 50s;
+}
+
+button:hover{
+    background-color: #5e1919;
 }
