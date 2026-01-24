@@ -1,11 +1,12 @@
 :root{
-    --primary-color:#9b1f1f;
+    --primary-color:#1f9b80;
 }
 
 *{
     /* Configurações globais, qualquer alteração aqui pode afetar bibliotecas */
     box-sizing: border-box;
     outline: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -14,7 +15,6 @@ body{
     width: 100vw;
     padding: 0px; 
     margin: 0px;
-    font-family: Arial, Helvetica, sans-serif;
     background-color: var(--primary-color);
 
     display: flex;
@@ -24,6 +24,14 @@ body{
 }
 
 .container{
+    display: grid;
+    grid-template-areas: 
+    "titulo titulo"
+    "imc resultado-imc"
+    "formulario formulario"
+    "resultado-calculo resultado-calculo";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
     max-width: 600px;
     padding: 20px;
     background-color: white;
@@ -32,7 +40,37 @@ body{
     text-align: justify;
 }
 
+h2{
+    margin: 2px 0px;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+ul li{
+    padding-bottom: 4px;
+}
+
+#titulo{
+    grid-area: titulo;
+}
+
+.imc-stats{
+    grid-area: imc;
+}
+
+.resultado-imc{
+    grid-area: resultado-imc;
+}
+
+.imc-stats, .resultado-imc{
+    margin: 10px 0px;
+}
+
 form{
+    grid-area: formulario;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -40,6 +78,15 @@ form{
 
 form p, label, input, button{
     width: 100%;
+}
+
+fieldset{
+    border-radius: 10px;
+
+}
+legend{
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 label{
@@ -87,5 +134,9 @@ button{
 }
 
 button:hover{
-    background-color: #5e1919;
+    background-color: #195e5b;
+}
+
+#resultado-calculo{
+    grid-area: resultado-calculo;
 }
