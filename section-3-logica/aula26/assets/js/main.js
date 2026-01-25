@@ -33,7 +33,7 @@ function meuEscopo() {
     function numeroOuNao(num) {
         // Após tudo, alterar para detectar , e substituir pelo . function subsVirgula() {}
         const convertendoNum = Number(num);
-        const EhNumero = !Number.isNaN(convertendoNum);
+        const EhNumero = num !== '' && !Number.isNaN(convertendoNum);
         return EhNumero;
     }
 
@@ -71,7 +71,7 @@ function meuEscopo() {
         telaResultado.innerHTML = `<p>[ERRO] Digite um valor válido</p>`;
     }
 
-
+    // Identificando se as métricas digitadas correspondem com as da vida real para as pessoas
     function realMetrics(p, a) {
         const maiorAltura = 3;
         const menorAltura = 0.546;
