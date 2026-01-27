@@ -31,44 +31,9 @@ function meuEscopo() {
 
     // Função para validar se realmente é um número
     function numeroOuNao(num) {
-        // Após tudo, alterar para detectar , e substituir pelo . function subsVirgula() {}
         const convertendoNum = Number(num);
         const EhNumero = num !== '' && !Number.isNaN(convertendoNum);
         return EhNumero;
-    }
-
-    // Calcular o imc
-    function calcImc(p, a) {
-        const imc = p / (a * a);
-        return imc.toFixed(2);
-    }
-
-    // Nível/Grau de imc de acordo com seu imc (Condicionais)
-    function statsImc(i) {
-        if (i < 18.5) return 'Abaixo do peso';
-        if (i < 24.9) return 'Peso normal';
-        if (i < 29.9) return 'Sobrepeso';
-        if (i < 34.9) return 'Obesidade grau 1';
-        if (i < 39.9) return 'Obesidade grau 2';
-        if (i > 39.9) return 'Obesidade grau 3';
-    }
-
-    // Caso número seja válido
-    function greenMsg(p, a) {
-        telaResultado.classList.remove('red-msg');
-        telaResultado.classList.add('green-msg');
-
-        const imc = calcImc(p, a);
-        telaResultado.innerHTML = `<p>O seu IMC é ${imc}</p>`;
-        telaResultado.innerHTML += `<p>Nível: ${statsImc(Number(imc))}</p>`;
-    }
-
-    // Caso número seja inválido
-    function redMsg() {
-        telaResultado.classList.remove('green-msg');
-        telaResultado.classList.add('red-msg');
-
-        telaResultado.innerHTML = `<p>[ERRO] Digite um valor válido</p>`;
     }
 
     // Identificando se as métricas digitadas correspondem com as da vida real para as pessoas
@@ -91,7 +56,57 @@ function meuEscopo() {
         }
     }
 
-}
+    
+    // Caso número seja válido
+    function greenMsg(p, a) {
+        telaResultado.classList.remove('red-msg');
+        telaResultado.classList.add('green-msg');
+        const imc = calcImc(p, a);
+        
+        telaResultado.innerHTML = '';
+        const paragrafo = criandoP();
+        paragrafo.innerHTML = `O seu IMC é ${imc}`;
+        
+        const outroParagrafo = criandoP();
+        outroParagrafo.innerHTML += `Nível: ${statsImc(Number(imc))}`;
+        telaResultado.appendChild(paragrafo);
+        telaResultado.appendChild(outroParagrafo);
+    }
+    
+    // Caso número seja inválido
+    function redMsg() {
+        telaResultado.classList.remove('green-msg');
+        telaResultado.classList.add('red-msg');
 
+        telaResultado.innerHTML = '';
+        const paragrafo = criandoP();
+        paragrafo.innerHTML = '[ERRO] Digite um valor válido';
+        telaResultado.appendChild(paragrafo);
+    }
+
+        // Criando parágrafo
+    function criandoP() {
+        const p = document.createElement('p');
+        return p;
+    }
+
+    // Calcular o imc
+    function calcImc(p, a) {
+        const imc = p / (a * a);
+        return imc.toFixed(2);
+    }
+
+    // Nível/Grau de imc de acordo com seu imc (Condicionais)
+    function statsImc(i) {
+        const nivel = ['Abaixo do peso', 'Peso normal', 'Sobrepeso', 'Obesidade grau 1', 'Obesidade grau 2', 'Obesidade grau 3']
+
+        if (i >= 39.9) return nivel[5];
+        if (i >= 34.9) return nivel[4];
+        if (i >= 29.9) return nivel[3];
+        if (i >= 24.9) return nivel[2];
+        if (i >= 18.5) return nivel[1];
+        if (i < 18.5) return nivel[0];
+    }
+}
 
 meuEscopo();
