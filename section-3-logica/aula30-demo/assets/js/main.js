@@ -1,105 +1,106 @@
-function meuEscopo() {
-    // const data = new Date();
-    // const dataBrasil = formataData(data);
-    // const tela = document.querySelector('.container')
-
-
-    // function getWeekTxt(dayWeek){
-    //     const nomeDiaSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira',  'sábado']
-    //     return nomeDiaSemana[dayWeek];
-    //     // let semanaTxt;
-    //     // switch(dayWeek){
-    //     //     case 0:
-    //     //     semanaTxt = 'domingo';
-    //     //     return semanaTxt;   
-    //     //     case 1:
-    //     //     semanaTxt = 'segunda-feira';
-    //     //     return semanaTxt;   
-    //     //     case 2:
-    //     //     semanaTxt = 'terça-feira';
-    //     //     return semanaTxt;   
-    //     //     case 3:
-    //     //     semanaTxt = 'quarta-feira';
-    //     //     return semanaTxt;   
-    //     //     case 4:
-    //     //     semanaTxt = 'quinta-feira';
-    //     //     return semanaTxt;   
-    //     //     case 5:
-    //     //     semanaTxt = 'sexta-feira';
-    //     //     return semanaTxt;   
-    //     //     case 6:
-    //     //     semanaTxt = 'sábado';
-    //     //     return semanaTxt;   
-    //     //     default:
-    //     //     semanaTxt = '[ERRO] Dia da semana inválido';
-    //     //     return semanaTxt;
-    //     // }
-    // }
-
-    // function nameMonth(mes){
-    //     const nomeMes = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro']
-    //     return nomeMes[mes];
-    //     // let nomeMes;
-    //     // switch(mes){
-    //     //     case 0:
-    //     //         nomeMes = 'janeiro';
-    //     //         return nomeMes
-    //     //     case 1:
-    //     //         nomeMes = 'fevereiro';
-    //     //         return nomeMes;
-    //     //     case 2:
-    //     //         nomeMes = 'março';
-    //     //         return nomeMes;
-    //     //     case 3:
-    //     //         nomeMes = 'abril';
-    //     //         return nomeMes;
-    //     //     case 4:
-    //     //         nomeMes = 'maio';
-    //     //         return nomeMes;
-    //     //     case 5:
-    //     //         nomeMes = 'junho';
-    //     //         return nomeMes;
-    //     //     case 6:
-    //     //         nomeMes = 'julho';
-    //     //         return nomeMes;
-    //     //     case 7:
-    //     //         nomeMes = 'agosto';
-    //     //         return nomeMes;
-    //     //     case 8:
-    //     //         nomeMes = 'setembro';
-    //     //         return nomeMes;
-    //     //     case 9:
-    //     //         nomeMes = 'outubro';
-    //     //         return nomeMes;
-    //     //     case 10:
-    //     //         nomeMes = 'novembro';
-    //     //         return nomeMes;
-    //     //     case 11:
-    //     //         nomeMes = 'dezembro';
-    //     //         return nomeMes;
-    //     //     default:
-    //     //         nomeMes = '';
-    //     //         return nomeMes;
-    //     // }
-    // }
-
-    // function zeroEsq(num){
-    //     return num<=9?`0${num}`:num
-    // }
-
-    // function formataData(data){
-    //     const diaSemana = data.getDay();
-    //     const diaSemanaTxt = getWeekTxt(diaSemana);
-
-    //     const numMes = data.getMonth();
-    //     const nomeMes = nameMonth(numMes);
-
-    //     return `${diaSemanaTxt}, ${zeroEsq(data.getDate())} de ${nomeMes} de ${data.getFullYear()}</br> ${zeroEsq(data.getHours())}:${zeroEsq(data.getMinutes())}`
-    // }
-
-    const h1 = document.querySelector('.container h1');
+function meuEscopo(){
+    const caixaData = document.querySelector('#data');
     const data = new Date();
-    h1.innerHTML = data.toLocaleString('pt-BR', {dateStyle:'full',timeStyle:'short'})
-};
+
+    caixaData.innerText = getDataTxt();
+
+    function getDataTxt(){
+        const diaSemana = isDayWeek();
+        const day = isDay();
+        const month = isMonth();
+        const year = isYear();
+        const hour = isHour();
+        const minute = isMinute();
+
+        // dia da semana, dia de mês de ano
+        // hora:minuto
+        return `${diaSemana}, ${day} de ${month} de ${year}\n${hour}:${minute}`;
+    }
+
+    // dia da semana
+    function isDayWeek(){
+        const dia = data.getDay();
+
+        const diaSemana = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+
+        return diaSemana[dia];
+
+        // verificando dia da semana por extenso
+        // switch(dia){
+        //     case 1: return `domingo`;
+        //     case 2: return `segunda-feira`;
+        //     case 3: return `terça-feira`;
+        //     case 4: return `quarta-feira`;
+        //     case 5: return `quinta-feira`;
+        //     case 6: return `sexta-feira`;
+        //     case 7: return `sábado`;
+        // }   
+    }
+
+
+    // dia
+    function isDay(){
+        const day = data.getDate();
+        return zeroEsq(day);
+    }
+
+    // mes
+    function isMonth(){
+        const month = data.getMonth();
+
+        const meses = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro']
+
+        return meses[month]
+
+        // month for extense
+        // switch(month){
+        //     case 1: return `janeiro`;
+        //     case 2: return `fevereiro`;
+        //     case 3: return `março`;
+        //     case 4: return `abril`;
+        //     case 5: return `maio`;
+        //     case 6: return `junho`;
+        //     case 7: return `julho`;
+        //     case 8: return `agosto`;
+        //     case 9: return `setembro`;
+        //     case 10: return `outubro`;
+        //     case 11: return `novembro`;
+        //     case 12: return `dezembro`;
+        // }
+    }
+
+    // ano
+    function isYear(){
+        const year = data.getFullYear();
+        return year;
+    }
+
+    // hora
+    function isHour(){
+        const hour = data.getHours();
+        return zeroEsq(hour);
+    }
+
+    // minuto
+    function isMinute(){
+        const minute = data.getMinutes();
+        return zeroEsq(minute);
+    }
+
+    // passar zero em números < 10
+    function zeroEsq(num){
+        return num >= 10? num:`0${num}`;
+    }
+}
 
 meuEscopo();
+
+// const caixaData = document.querySelector('#data');
+// const data = new Date();
+// const opcoes = {
+//     dateStyle: 'full',
+//     timeStyle: 'short'
+// }
+
+// caixaData.innerHTML = data.toLocaleString('pt-BR', opcoes);
+
